@@ -1,25 +1,17 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Clock from './components/clock';
+import Alarm from './components/alaram';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+function App(){
+  const [alarms,setAlarms] = useState([]);
+return (
+<div className='App'>
+<h1 className='alar'>Digital Alarm Clock</h1>
+      <Clock/>
+      <Alarm alarms={alarms} setAlarms={setAlarms} />
+  </div>
   );
 }
 
-export default App;
+export default App;
